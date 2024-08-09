@@ -452,6 +452,9 @@ static NSTimeInterval _clockskew = 0.0;
 }
 
 - (BOOL)aws_isVirtualHostedStyleCompliant {
+    // Make AWSS3 work with MinIO
+    return NO;
+    
     if (![self aws_isDNSBucketName]) {
         return NO;
     } else {
